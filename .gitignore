@@ -1,0 +1,8 @@
+.idea/
+venv/
+__pycache__/
+MessagingSystem/__pycache__/
+MessagingSystem/migrations/
+Messaging/__pycache__/
+db.sqlite3
+*.pyc
