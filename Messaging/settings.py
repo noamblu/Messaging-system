@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'm)e71$!w^utz0fna*bc-%*b$dlwz3@jvj#e0f#w67p@&p$js%i'
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -77,18 +79,13 @@ WSGI_APPLICATION = 'Messaging.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # },
-
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'defaultdb',
-        'USER': 'avnadmin',
-        'PASSWORD': 'yd1xuwbxegx98mub',
-        'HOST': 'mysql-106c1dfc-noamblu1-d0c6.aivencloud.com',
-        'PORT': '17316',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'datnf27vpnddk3',
+        'USER': 'umaszyytlpeahi',
+        'PASSWORD': '191e1c700d56ee2f9646513bc09e49dd2cee6f1a63154ff5ea1d220c1e804ee9',
+        'HOST': 'ec2-50-17-90-177.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -131,3 +128,5 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())
