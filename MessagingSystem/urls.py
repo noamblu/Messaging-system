@@ -8,6 +8,6 @@ router = routers.SimpleRouter()
 urlpatterns = [
     path(r'', include(router.urls)),
 
-    path('messages/', MessagesView.as_view(), name="messages"),
-    path('message/', MessageView.as_view(), name="message"),
+    path('messages/', MessagesListView.as_view(), name="messages"),
+    path('messages/<int:message_id>/', MessageDetailView.as_view(), name="message"),
 ]

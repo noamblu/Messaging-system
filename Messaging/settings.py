@@ -22,9 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'm)e71$!w^utz0fna*bc-%*b$dlwz3@jvj#e0f#w67p@&p$js%i'
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['messagingapp1.herokuapp.com']
 
